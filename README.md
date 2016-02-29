@@ -1,6 +1,6 @@
 #Appointment Scheduler Demo
 
-Live demo: 
+Live demo: http://mpliang.github.io/tcc/
 
 ## Features:
 
