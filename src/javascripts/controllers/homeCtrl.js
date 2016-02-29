@@ -1,19 +1,11 @@
 'use strict';
 
-app.controller('homeCtrl', function ($scope, $mdDialog, $state) {
+app.controller('homeCtrl', function ($scope, $mdDialog, $state, api) {
 
-  $scope.years = getYears();
-  $scope.configs = ['Config A', 'Config B', 'Config C', 'Not Sure']
-  $scope.models = ['Model A', 'Model B', 'Model C'];
-  $scope.makes = ["AM General", "Acura", "Alfa Romeo", "Aston Martin", "Audi", "BMW", "Bentley", "Bugatti", "Buick", "Cadillac", "Chevrolet", "Chrysler", "Daewoo", "Dodge", "Eagle", "FIAT", "Ferrari", "Fisker", "Ford", "GMC", "Genesis", "Geo", "HUMMER", "Honda", "Hyundai", "Infiniti", "Isuzu", "Jaguar", "Jeep", "Kia", "Lamborghini", "Land Rover", "Lexus", "Lincoln", "Lotus", "MINI", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-Benz", "Mercury", "Mitsubishi", "Nissan", "Oldsmobile", "Panoz", "Plymouth", "Pontiac", "Porsche", "Ram", "Rolls-Royce", "Saab", "Saturn", "Scion", "Smart", "Spyker", "Subaru", "Suzuki", "Tesla", "Toyota", "Volkswagen", "Volvo"];
-
-  function getYears() {
-    let years = [];
-    for (let i = 2016; i >= 1985; i--) {
-      years.push(i);
-    }
-    return years;
-  }
+  $scope.years = api.years();
+  $scope.configs = api.configs();
+  $scope.models = api.models();
+  $scope.makes = api.makes();
 
   $scope.submit = (appt) => {
     // create appointment object
