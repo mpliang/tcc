@@ -19,9 +19,9 @@ Live demo: http://mpliang.github.io/tcc/
 - Babel
 - ES6
 
-### Todo:
+#### Todo:
 
-### Bugs:
+#### Bugs:
 
 #### Scope
 
