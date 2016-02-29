@@ -15,6 +15,8 @@ Live demo: http://mpliang.github.io/tcc/
 - Angular
 - Angular UI Router
 - Angular Materialize
+- Gulp
+- Babel
 - ES6
 
 ### Todo:
