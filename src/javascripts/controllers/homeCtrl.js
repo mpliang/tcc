@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('homeCtrl', function ($scope, $mdDialog, $state, api) {
+app.controller('homeCtrl', ($scope, $mdDialog, $state, api) => {
 
   $scope.years = api.years();
   $scope.configs = api.configs();
