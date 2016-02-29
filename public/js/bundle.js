@@ -7,7 +7,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', functi
 
   $urlRouterProvider.otherwise('/');
 
-  $stateProvider.state('home', { url: '/', templateUrl: '/public/templates/home.html', controller: 'homeCtrl' });
+  $stateProvider.state('home', { url: '/', templateUrl: './public/templates/home.html', controller: 'homeCtrl' });
 }]);
 'use strict';
 
