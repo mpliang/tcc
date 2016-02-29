@@ -1,6 +1,6 @@
 'use strict';
 
-app.service('api', () => {
+app.service('api', function(){
 
   this.configs = () => ['Config A', 'Config B', 'Config C', 'Not Sure']
   this.models = () => ['Model A', 'Model B', 'Model C'];

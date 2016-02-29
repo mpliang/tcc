@@ -8,5 +8,5 @@ app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('home', { url: '/', templateUrl: '/src/templates/home.html', controller: 'homeCtrl' })
+    .state('home', { url: '/', templateUrl: '/public/templates/home.html', controller: 'homeCtrl' })
 })

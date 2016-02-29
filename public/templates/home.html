@@ -1,0 +1,75 @@
+<div layout-align="center center" flex-gt-sm="50" flex-offset-gt-sm="25">
+  <md-content layout-padding>
+    <form name="apptForm" class="md-whiteframe-4dp" ng-submit="submit(appt)">
+
+      <h1 class="md-title">Schedule an appointment now!</h1>
+      <h5>Please describe your vehicle:</h5>
+
+      <div layout-xs="column" layout="row">
+        <!-- Auto complete, type ahead for make -->
+        <md-input-container class="md-block" flex>
+          <label>Make<span style="color:red">*</span></label>
+          <md-select required ng-model="appt.make">
+            <md-option ng-repeat="make in makes" value="{{make}}">
+              {{make}}
+            </md-option>
+          </md-select>
+          <div ng-messages="apptForm.make.$error">
+            <div ng-message="required">Make is required.</div>
+          </div>
+        </md-input-container>
+
+        <!-- Drop down for year, virtual thingy -->
+        <md-input-container class="md-block" flex>
+          <label>Year<span style="color:red">*</span></label>
+          <md-select required ng-model="appt.year" ng-disabled="!appt.make">
+            <md-option ng-repeat="year in years" value="{{year}}">
+              {{year}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+
+      <div layout-xs="column" layout="row">
+        <!-- Drop down selection for model, hard coded -->
+        <md-input-container class="md-block" flex>
+          <label>Model<span style="color:red">*</span>
+          </label>
+          <md-select required ng-model="appt.model" ng-disabled="!appt.year">
+            <md-option ng-repeat="model in models" value="{{model}}">
+              {{model}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+
+        <md-input-container class="md-block" flex>
+          <label>Configuration</label>
+          <md-select ng-model="appt.config" ng-disabled="!appt.model">
+            <md-option ng-repeat="config in configs" value="{{config}}">
+              {{config}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+
+      <!-- Input validation for whole digits between 0-999,999 -->
+      <md-input-container class="md-block" flex-gt-sm="50">
+        <label>Mileage</label>
+        <input name="mileage" ng-model="appt.mileage" ng-pattern="/^[0-9]{0,6}$/">
+        <div ng-cloak ng-messages="apptForm.mileage.$error">
+          <p ng-message="pattern">Please enter a valid mileage</p>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Notes</label>
+        <textarea ng-model="appt.notes" md-maxlength="500" md-select-on-focus></textarea>
+      </md-input-container>
+
+      <div layout="row">
+        <md-button ng-disabled="!apptForm.$valid" type="submit" class="md-raised md-warn" flex>Schedule</md-button>
+      </div>
+
+    </form>
+  </md-content>
+</div>
