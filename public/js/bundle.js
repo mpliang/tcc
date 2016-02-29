@@ -2,16 +2,16 @@
 
 var app = angular.module('tcc', ['ui.router', 'ngMaterial', 'ngMessages']);
 
-app.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
   $mdThemingProvider.theme('default').primaryPalette('light-blue').accentPalette('orange');
 
   $urlRouterProvider.otherwise('/');
 
   $stateProvider.state('home', { url: '/', templateUrl: '/public/templates/home.html', controller: 'homeCtrl' });
-});
+}]);
 'use strict';
 
-app.controller('homeCtrl', function ($scope, $mdDialog, $state, api) {
+app.controller('homeCtrl', ['$scope', '$mdDialog', '$state', 'api', function ($scope, $mdDialog, $state, api) {
 
   $scope.years = api.years();
   $scope.configs = api.configs();
@@ -38,7 +38,7 @@ app.controller('homeCtrl', function ($scope, $mdDialog, $state, api) {
       return console.error('Error, you did not successfully schedule an appointment');
     });
   };
-});
+}]);
 'use strict';
 
 app.service('api', function () {
