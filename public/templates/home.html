@@ -6,7 +6,6 @@
       <h5>Please describe your vehicle:</h5>
 
       <div layout-xs="column" layout="row">
-        <!-- Auto complete, type ahead for make -->
         <md-input-container class="md-block" flex>
           <label>Make<span style="color:red">*</span></label>
           <md-select required ng-model="appt.make">
@@ -19,7 +18,6 @@
           </div>
         </md-input-container>
 
-        <!-- Drop down for year, virtual thingy -->
         <md-input-container class="md-block" flex>
           <label>Year<span style="color:red">*</span></label>
           <md-select required ng-model="appt.year" ng-disabled="!appt.make">
@@ -31,7 +29,6 @@
       </div>
 
       <div layout-xs="column" layout="row">
-        <!-- Drop down selection for model, hard coded -->
         <md-input-container class="md-block" flex>
           <label>Model<span style="color:red">*</span>
           </label>
