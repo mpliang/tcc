@@ -23,7 +23,7 @@ Live demo: http://mpliang.github.io/tcc/
 
 #### Bugs:
 
-#### Scope
+#### Scope:
 
 ```
 I'd like you to create a mock version of this page using responsive design. There's going to be no back end, obviously, so you can hardcode 2-3 values for vehicle make / model / year / configuration options and they don't have to be real either (Model A / Model B / Model C and Trim A / Trim B are completely fine). You don't have to use the same color scheme, layout or UI widgets as shown - the screenshot serves only to illustrate the functionality.
