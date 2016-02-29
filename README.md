@@ -19,7 +19,9 @@ Live demo: http://mpliang.github.io/tcc/
 - Babel
 - ES6
 
-#### Todo:
+#### Installation:
+
+clone and cd into repo, npm install && gulp deploy
 
 #### Bugs:
 
